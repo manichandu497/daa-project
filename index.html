@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyword Matching Search Engine</title>
+<link rel="stylesheet" href="daa.css">
+</head>
+<body>
+<header class="hero">
+  <h1>🔍 Keyword Matching Search Engine</h1>
+  <p>DAA Project – Search and Rank Documents Using Algorithms</p>
+</header>
+
+<main class="wrap">
+  <nav class="tabs" role="tablist">
+    <button class="tab active" type="button" role="tab" aria-selected="true" data-view="docs">Search Documents</button>
+    <button class="tab" type="button" role="tab" aria-selected="false" data-view="file">Search My File</button>
+  </nav>
+
+  <div id="viewDocs">
+    <section class="panel">
+      <input id="query" type="text" placeholder="Enter keywords... e.g. machine learning" autocomplete="off" aria-label="Search keywords">
+      <select id="algo" aria-label="Search algorithm">
+        <option value="linear" selected>Linear Search</option>
+        <option value="binary">Binary Search</option>
+        <option value="hash">Hash Search</option>
+      </select>
+      <button id="searchBtn" type="button">Search</button>
+    </section>
+
+    <p id="message" role="status" hidden></p>
+
+    <section class="stats">
+      <div class="card"><h2>Documents</h2><div class="num" id="statDocs">0</div></div>
+      <div class="card"><h2>Results</h2><div class="num" id="statResults">0</div></div>
+      <div class="card"><h2>Comparisons</h2><div class="num" id="statComps">0</div></div>
+      <div class="card"><h2>Execution Time</h2><div class="num" id="statTime">0 ms</div></div>
+    </section>
+
+    <section id="results" aria-live="polite"></section>
+  </div>
+
+  <div id="viewFile" hidden>
+    <section class="panel">
+      <label class="filebtn">
+        <input id="fileInput" type="file" accept=".txt,.md,.csv,.json,.html,.log,.js,.py,.java,.c,.cpp,text/plain">
+        <span id="fileLabel">Choose a file</span>
+      </label>
+      <input id="fileQuery" type="text" placeholder="Enter a keyword to find in the file" autocomplete="off" aria-label="Keyword to find in the file">
+      <select id="fileAlgo" aria-label="Search algorithm for the file">
+        <option value="linear" selected>Linear Search</option>
+        <option value="binary">Binary Search</option>
+        <option value="hash">Hash Search</option>
+      </select>
+      <button id="fileBtn" type="button">Search File</button>
+    </section>
+
+    <p id="fileMessage" class="msg" role="status" hidden></p>
+
+    <section class="stats">
+      <div class="card"><h2>Words in File</h2><div class="num" id="fileWords">0</div></div>
+      <div class="card"><h2>Occurrences</h2><div class="num" id="fileCount">0</div></div>
+      <div class="card"><h2>Comparisons</h2><div class="num" id="fileComps">0</div></div>
+      <div class="card"><h2>Execution Time</h2><div class="num" id="fileTime">0 ms</div></div>
+    </section>
+
+    <section id="fileResults" aria-live="polite"></section>
+  </div>
+</main>
+
+<script src="daa1.js"></script>
+</body>
+</html>
